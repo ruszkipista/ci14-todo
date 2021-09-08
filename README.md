@@ -1,2 +1,2 @@
-# ci14-todo
+# ToDo
 ToDo app written using Django framework
