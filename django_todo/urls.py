@@ -16,9 +16,10 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 
-from todo.views import output_todo_list
+from todo.views import create_todo_item, output_todo_list
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', output_todo_list, name="todo_list"),
+    path('add_item', create_todo_item, name="add_item"),
 ]
