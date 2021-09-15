@@ -10,7 +10,8 @@
 </head>
 <body>
     <h1>Add a ToDo item</h1>
-    <form action="add_item" method="POST">
+    <form action="add_item_manual" method="POST">
+        <h2>Manually created form elements and verification</h2>
         <!-- Generate token to server accept request -->
         {% csrf_token%}
         <p>
