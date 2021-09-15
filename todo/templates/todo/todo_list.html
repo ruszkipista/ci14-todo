@@ -23,6 +23,11 @@
                     <button>Edit</button>
                 </a>
             </td>
+            <td>
+                <a href="{% url 'toggle_done' item.id %}">
+                    <button>Toggle</button>
+                </a>
+            </td>
         </tr>
     {% empty %}
         <tr><td>You have nothing to do</td></tr>

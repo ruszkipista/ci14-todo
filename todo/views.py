@@ -35,15 +35,24 @@ def create_todo_item_auto(request):
     }
     return render(request, "todo/add_item_auto.html", context)
 
+
 def update_todo_item_auto(request, item_id):
     item = get_object_or_404(Item, id=item_id)
     if request.method == "POST":
-        form = ItemForm(request.POST, instance=item)
-        if form.is_valid():
-            form.save()
+        item_new = ItemForm(request.POST, instance=item)
+        if item_new.is_valid():
+            item_new.save()
             return redirect("/")
+
     form = ItemForm(instance=item)
     context = {
         'form_generated' : form
     }
     return render(request, "todo/edit_item_auto.html", context)
+
+
+def toggle_todo_done(request, item_id):
+    item = get_object_or_404(Item, id=item_id)
+    item.done = not item.done
+    item.save()
+    return redirect("/")
