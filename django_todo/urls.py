@@ -25,4 +25,5 @@ urlpatterns = [
     path('add_item_auto', views.create_todo_item_auto, name="add_item_auto"),
     path('edit_item_auto/<item_id>', views.update_todo_item_auto, name="edit_item_auto"),
     path('toggle_done/<item_id>', views.toggle_todo_done, name="toggle_done"),
+    path('remove_item/<item_id>', views.delete_todo_item, name="remove_item"),
 ]
