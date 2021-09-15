@@ -9,14 +9,14 @@
     <link href="{% static 'todo.png' %}" rel="shortcut icon" type="image/png" />
 </head>
 <body>
-    <h1>Add a ToDo item</h1>
-    <form action="{% url 'add_item_auto' %}" method="POST">
+    <h1>Edit a ToDo item</h1>
+    <form method="POST">
         <h2>Automatically generated form elements and verification</h2>
         <!-- Generate token to server to accept request -->
         {% csrf_token%}
         {{ form_generated.as_p }}
         <p>
-            <button type="submit">Add Item</button>
+            <button type="submit">Update Item</button>
         </p>
     </form>
 </body>

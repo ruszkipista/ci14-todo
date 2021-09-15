@@ -23,4 +23,5 @@ urlpatterns = [
     path('', todo.views.output_todo_list, name="todo_list"),
     path('add_item_manual', todo.views.create_todo_item_manual, name="add_item_manual"),
     path('add_item_auto', todo.views.create_todo_item_auto, name="add_item_auto"),
+    path('edit_item_auto/<item_id>', todo.views.update_todo_item_auto, name="edit_item_auto"),
 ]
