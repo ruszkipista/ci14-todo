@@ -10,7 +10,7 @@ git clone https://github.com/ruszkipista/ci14-todo.git
 ```
 4. navigate inside of the project folder
 ```bash
-cd ci14-todo
+cd ci15-todo
 ```
 5. create a python virtual environment
 ```bash
