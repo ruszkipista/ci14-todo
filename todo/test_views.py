@@ -1,6 +1,5 @@
 from django.test import TestCase
 from .models import Item
-from .forms import ItemForm
 
 class TestItemViews(TestCase):
 

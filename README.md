@@ -209,6 +209,6 @@ FAILED (failures=1)
 You can rename the `tests.py` file to `test_<something>.py` and django will still find it and run at testing.
 
 You can be more specific what you are testing
-* `python manage.py test todo.test_forms` - one test file only
-* `python manage.py test todo.test_forms.TestItemForm` - one class froma a test file only
-* `python manage.py test todo.test_forms.TestItemForm.test_fields_are_explicit_in_form_metaclass` - one test method only
+* `python manage.py test todo.test_forms` - only one test file
+* `python manage.py test todo.test_forms.TestItemForm` - only one class from a a test file
+* `python manage.py test todo.test_forms.TestItemForm.test_fields_are_explicit_in_form_metaclass` - only one test method
