@@ -181,3 +181,34 @@ Run the server again with `python manage.py runserver` and login on http://127.0
 
 click on `Users`:
 ![Modify Users](./docs/django_admin_user_auth.png)
+
+
+## Testing
+in /todo/tests.py create new class
+```python
+from django.test import TestCase
+class TestDjango(TestCase):
+    def test_my_case(self):
+        self.assertEqual(1,0)
+```
+run test with `python manage.py test`, that produces the log of a failed test case:
+```
+System check identified no issues (0 silenced).
+F
+======================================================================
+FAIL: test_my_case (todo.tests.TestDjango)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "ci15-todo\todo\tests.py", line 4, in test_my_case
+    self.assertEqual(1,0)
+AssertionError: 1 != 0
+----------------------------------------------------------------------
+Ran 1 test in 0.005s
+FAILED (failures=1)
+```
+You can rename the `tests.py` file to `test_<something>.py` and django still will find it and run at testing.
+
+You can be more specific what you are testing
+* `python manage.py test todo.test_forms` - one test file only
+* `python manage.py test todo.test_forms.TestItemForm` - one class froma a test file only
+* `python manage.py test todo.test_forms.TestItemForm.test_fields_are_explicit_in_form_metaclass` - one test method only
