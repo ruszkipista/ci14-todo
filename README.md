@@ -210,5 +210,7 @@ You can rename the `tests.py` file to `test_<something>.py` and django will stil
 
 You can be more specific what you are testing
 * `python manage.py test todo.test_forms` - only one test file
-* `python manage.py test todo.test_forms.TestItemForm` - only one class from a a test file
+* `python manage.py test todo.test_forms.TestItemForm` - only one class from a test file
 * `python manage.py test todo.test_forms.TestItemForm.test_fields_are_explicit_in_form_metaclass` - only one test method
+
+Best practice to separate tests into `test_forms.py`, `test_views.py` and `test_models.py`
