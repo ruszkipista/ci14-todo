@@ -215,3 +215,42 @@ You can be more specific what you are testing
 
 Best practice to separate tests into `test_forms.py`, `test_views.py` and `test_models.py`.
 Testing creates a temporary database which gets destroyed after tests run"
+
+## Code Coverage in testing
+install module `coverage`:
+```bash
+pip install coverage
+```
+run the code coverage detection with
+```bash
+coverage run --source=todo manage.py test
+```
+Check the coverage report:
+```bash
+$ coverage report
+Name                                        Stmts   Miss  Cover
+---------------------------------------------------------------
+todo\__init__.py                                0      0   100%
+todo\admin.py                                   3      0   100%
+todo\apps.py                                    4      0   100%
+todo\forms.py                                   6      0   100%
+todo\migrations\0001_initial.py                 5      0   100%
+todo\migrations\0002_rename_items_item.py       4      0   100%
+todo\migrations\__init__.py                     0      0   100%
+todo\models.py                                  6      0   100%
+todo\test_forms.py                             14      0   100%
+todo\test_models.py                            10      0   100%
+todo\test_views.py                             64      0   100%
+todo\views.py                                  44      0   100%
+---------------------------------------------------------------
+TOTAL                                         160      0   100%
+```
+wherever it is not 100%, consider writing test case(s) for them
+
+generate HTML report from the coverage details:
+```bash
+coverage html
+```
+This creates a new `coverage` folder which contains a static website. Start the webserver (e.g. Live Server plugin in VS Code) on the `index.html` file.
+![Coverage Report Summary](./docs/coverage-summary.png)
+![Coverage Report Details](./docs/coverage-details.png)
