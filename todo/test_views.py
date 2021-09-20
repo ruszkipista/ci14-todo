@@ -35,8 +35,23 @@ class TestItemViews(TestCase):
         # the template was used to create the response
         self.assertTemplateUsed(response, "todo/edit_item_auto.html")
 
-    def test_create_todo_item(self):
-        item_name = "Test Create Item"
+
+    def test_create_todo_item_manual(self):
+        item_name = "Test Create ManualForm Item"
+        item = {"item_name": item_name, "item_done":False}
+        response = self.client.post("/add_item_manual", item)
+        # the response was code 302 Moved Temporarily (redirected)
+        self.assertEqual(response.status_code, 302)
+        # redirected to root "/"
+        self.assertRedirects(response, "/")
+        # get all items with given name
+        stored_items = Item.objects.filter(name=item_name)
+        # there is exactly 1
+        self.assertEqual(len(stored_items), 1)
+
+
+    def test_create_todo_item_auto(self):
+        item_name = "Test Create AutoForm Item"
         item = {"name": item_name, "done":False}
         response = self.client.post("/add_item_auto", item)
         # the response was code 302 Moved Temporarily (redirected)
