@@ -213,4 +213,5 @@ You can be more specific what you are testing
 * `python manage.py test todo.test_forms.TestItemForm` - only one class from a test file
 * `python manage.py test todo.test_forms.TestItemForm.test_fields_are_explicit_in_form_metaclass` - only one test method
 
-Best practice to separate tests into `test_forms.py`, `test_views.py` and `test_models.py`
+Best practice to separate tests into `test_forms.py`, `test_views.py` and `test_models.py`.
+Testing creates a temporary database which gets destroyed after tests run"

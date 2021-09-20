@@ -6,3 +6,7 @@ venv/
 
 # DB
 db.sqlite3
+
+# Coverage report
+htmlcov/
+.coverage
