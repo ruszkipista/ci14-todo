@@ -184,7 +184,7 @@ click on `Users`:
 
 
 ## Testing
-in /todo/tests.py create new class
+in `/todo/tests.py` create new class
 ```python
 from django.test import TestCase
 class TestDjango(TestCase):
@@ -206,7 +206,7 @@ AssertionError: 1 != 0
 Ran 1 test in 0.005s
 FAILED (failures=1)
 ```
-You can rename the `tests.py` file to `test_<something>.py` and django still will find it and run at testing.
+You can rename the `tests.py` file to `test_<something>.py` and django will still find it and run at testing.
 
 You can be more specific what you are testing
 * `python manage.py test todo.test_forms` - one test file only
