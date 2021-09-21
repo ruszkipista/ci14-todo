@@ -27,9 +27,9 @@ if os.path.exists("env.py"):
 SECRET_KEY = os.environ.get("DJANGO_SECRET_KEY")
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = os.environ.get("DJANGO_DEBUG","False").lower() in {'1','true','t','yes','y'}
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = [os.environ.get("DJANGO_ALLOWED_HOST")]
 
 
 # Application definition
