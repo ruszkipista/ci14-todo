@@ -10,3 +10,6 @@ db.sqlite3
 # Coverage report
 htmlcov/
 .coverage
+
+# local environment variables
+env.py
